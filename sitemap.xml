@@ -67,7 +67,7 @@
 
   
   <url>
-    <loc>http://example.com/tags/123123/</loc>
+    <loc>http://example.com/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</loc>
     <lastmod>2021-03-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -76,7 +76,7 @@
 
   
   <url>
-    <loc>http://example.com/categories/1/</loc>
+    <loc>http://example.com/categories/%E5%A4%8D%E7%8E%B0/</loc>
     <lastmod>2021-03-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

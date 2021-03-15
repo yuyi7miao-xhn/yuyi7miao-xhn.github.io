@@ -56,10 +56,10 @@
 <p>​    自此，利用永恒之蓝漏洞攻击一台主机就结束了，现在只有一些低版本的电脑没有打ms17_010的补丁，windows7 以上版本几乎都没有这个漏洞了。</p>
 ]]></content>
       <categories>
-        <category>1</category>
+        <category>复现</category>
       </categories>
       <tags>
-        <tag>123123</tag>
+        <tag>漏洞复现</tag>
       </tags>
   </entry>
 </search>
